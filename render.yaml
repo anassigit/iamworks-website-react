@@ -1,0 +1,12 @@
+services:
+  - type: web
+    runtime: docker
+    name: iamworks-backend
+    rootDir: backend
+    plan: free
+    healthCheckPath: /api/health
+    envVars:
+      - key: SPRING_PROFILES_ACTIVE
+        value: prod
+      - key: APP_CORS_ALLOWED_ORIGIN_PATTERNS
+        value: https://anassigit.github.io
